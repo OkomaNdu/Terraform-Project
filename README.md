@@ -156,6 +156,8 @@ terraform apply
 
 ```bash
 ssh -i ~/.ssh/id_rsa ec2-user@<ec2_public_ip>
+or
+ssh ec2-user@<ec2_public_ip>
 ```
 
 **7. Destroy all resources when done**
@@ -193,7 +195,10 @@ Once the instance is running, open your browser and navigate to:
 
 ```
 http://<ec2_public_ip>:8080
+
+/home/ndu/Pictures/Screenshots/Screenshot from 2026-03-13 17-26-35.png
 ```
+
 
 A successful deployment serves the **Welcome to nginx!** default page — confirming that Docker and Nginx are running inside the EC2 instance.
 
