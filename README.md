@@ -195,8 +195,6 @@ Once the instance is running, open your browser and navigate to:
 
 ```
 http://<ec2_public_ip>:8080
-
-/home/ndu/Downloads/nginx-demo_1.png
 ```
 
 
