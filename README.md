@@ -43,7 +43,6 @@ This project is a practical Terraform demo that builds AWS cloud infrastructure 
 ---
 
 ## Architecture
-
 ![alt text](architecture.png)
 
 ---
@@ -195,6 +194,7 @@ Once the instance is running, open your browser and navigate to:
 
 ```
 http://<ec2_public_ip>:8080
+![alt text](nginx-demo_1.png)
 ```
 
 
