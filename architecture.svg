@@ -1,178 +1,258 @@
-<svg width="800" height="720" viewBox="0 0 800 720" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
 
-  <!-- Background -->
-  <rect width="800" height="720" fill="#ffffff" rx="8"/>
-
-  <!-- ══ Terraform header banner ══ -->
-  <rect x="0" y="0" width="800" height="36" rx="8" fill="#7B42BC"/>
-  <rect x="0" y="28" width="800" height="8" fill="#7B42BC"/>
-  <!-- Terraform T-logo (simplified) -->
-  <rect x="16" y="6" width="18" height="3" rx="1" fill="white"/>
-  <rect x="23" y="6" width="3" height="20" rx="1" fill="white"/>
-  <text x="44" y="22" font-size="13" font-weight="700" fill="white">Terraform</text>
-  <text x="120" y="22" font-size="12" fill="#e0c8ff">·  Infrastructure as Code</text>
-  <!-- right side badges -->
-  <rect x="540" y="8" width="100" height="20" rx="4" fill="#5c2d91"/>
-  <text x="590" y="22" text-anchor="middle" font-size="10" fill="#e0c8ff">provider: aws</text>
-  <rect x="650" y="8" width="136" height="20" rx="4" fill="#5c2d91"/>
-  <text x="718" y="22" text-anchor="middle" font-size="10" fill="#e0c8ff">region: ca-central-1</text>
-
-  <!-- ══ Users ══ -->
-  <circle cx="400" cy="68" r="14" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <path d="M375 104 Q375 88 400 88 Q425 88 425 104" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
-  <line x1="375" y1="104" x2="425" y2="104" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
-  <text x="400" y="120" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a1a">Users</text>
-
-  <!-- Arrow: Users → IGW -->
-  <line x1="400" y1="123" x2="400" y2="158" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
-
+  <!-- ── Background ── -->
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M2 1L8 5L2 9" fill="none" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#555" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
-    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M2 1L8 5L2 9" fill="none" stroke="#1a73e8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <marker id="arr-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
-    <marker id="arr-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M2 1L8 5L2 9" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <marker id="arr-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#FF9900" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000018"/>
+    </filter>
   </defs>
 
-  <!-- ══ AWS Cloud boundary ══ -->
-  <rect x="20" y="136" width="760" height="568" rx="10" fill="none" stroke="#FF9900" stroke-width="2" stroke-dasharray="8 4"/>
-  <rect x="20" y="136" width="80" height="24" rx="4" fill="#232F3E"/>
-  <text x="60" y="152" text-anchor="middle" font-size="11" font-weight="700" fill="#FF9900" font-family="monospace">aws</text>
-  <text x="112" y="152" font-size="12" font-weight="600" fill="#e07b00">AWS Cloud</text>
+  <!-- Page background -->
+  <rect width="1200" height="700" fill="#f4f6f9"/>
 
-  <!-- Terraform resource label on AWS Cloud -->
-  <rect x="620" y="140" width="150" height="18" rx="4" fill="#f3e8ff" stroke="#7B42BC" stroke-width="0.8"/>
-  <text x="695" y="152" text-anchor="middle" font-size="9" fill="#5c2d91">aws_vpc.myapp-vpc</text>
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="48" fill="#1a1f36"/>
+  <!-- Terraform T logo in title -->
+  <polygon points="18,12 28,8 38,12 28,16" fill="#7B42BC"/>
+  <polygon points="18,20 28,16 38,20 28,24" fill="#9B62DC" opacity="0.85"/>
+  <polygon points="18,28 28,24 38,28 28,32" fill="#7B42BC" opacity="0.7"/>
+  <text x="48" y="30" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="0.5">Terraform · AWS Nginx Docker Deployment</text>
+  <text x="1180" y="30" text-anchor="end" font-size="11" fill="#8892a4">ca-central-1 · Modular IaC</text>
 
-  <!-- ══ VPC boundary ══ -->
-  <rect x="40" y="168" width="720" height="524" rx="8" fill="#f0faf0" stroke="#2e7d32" stroke-width="1.5"/>
-  <rect x="52" y="180" width="18" height="14" rx="3" fill="#2e7d32" opacity="0.8"/>
-  <text x="78" y="191" font-size="12" font-weight="600" fill="#1b5e20">VPC — dev-vpc (10.0.0.0/16)</text>
+  <!-- ════════════════════════════════════════════════
+       LEFT PANEL — Dev Environment
+  ════════════════════════════════════════════════ -->
 
-  <!-- ══ Internet Gateway ══ -->
-  <rect x="336" y="162" width="128" height="56" rx="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
-  <line x1="364" y1="200" x2="364" y2="178" stroke="#1a73e8" stroke-width="2" marker-end="url(#arr-blue)"/>
-  <line x1="384" y1="178" x2="384" y2="200" stroke="#1a73e8" stroke-width="2" marker-end="url(#arr-blue)"/>
-  <text x="420" y="186" font-size="11" font-weight="600" fill="#0d47a1">Internet</text>
-  <text x="420" y="202" font-size="11" font-weight="600" fill="#0d47a1">Gateway</text>
-  <text x="400" y="228" text-anchor="middle" font-size="10" fill="#555">dev-igw</text>
-  <!-- Terraform label -->
-  <rect x="310" y="218" width="180" height="16" rx="3" fill="#f3e8ff" stroke="#7B42BC" stroke-width="0.7"/>
-  <text x="400" y="229" text-anchor="middle" font-size="9" fill="#5c2d91">aws_internet_gateway.myapp-igw</text>
+  <!-- Panel card -->
+  <rect x="18" y="66" width="258" height="614" rx="10" fill="#ffffff" filter="url(#shadow)"/>
+  <rect x="18" y="66" width="258" height="36" rx="10" fill="#2d3561"/>
+  <rect x="18" y="90" width="258" height="12" fill="#2d3561"/>
+  <text x="147" y="89" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff" letter-spacing="0.8">DEV ENVIRONMENT</text>
 
-  <!-- Arrow: IGW → Route Table -->
-  <line x1="400" y1="234" x2="400" y2="262" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- ── Terraform config files ── -->
+  <!-- Terraform logo stacked diamonds -->
+  <polygon points="110,138 147,118 184,138 147,158" fill="#7B42BC"/>
+  <polygon points="79,164 116,144 153,164 116,184" fill="#7B42BC" opacity="0.85"/>
+  <polygon points="141,164 178,144 215,164 178,184" fill="#5c2d91"/>
+  <polygon points="79,190 116,170 153,190 116,210" fill="#7B42BC" opacity="0.65"/>
+  <polygon points="141,190 178,170 215,190 178,210" fill="#5c2d91" opacity="0.8"/>
 
-  <!-- ══ Subnet boundary ══ -->
-  <rect x="60" y="258" width="680" height="420" rx="8" fill="#e8f0fe" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.2" stroke-dasharray="6 3"/>
-  <rect x="76" y="268" width="14" height="12" rx="2" fill="none" stroke="#1a73e8" stroke-width="1.2"/>
-  <path d="M79 268 Q79 263 83 263 Q87 263 87 268" fill="none" stroke="#1a73e8" stroke-width="1.2"/>
-  <text x="98" y="277" font-size="11" font-weight="600" fill="#0d47a1">Public Subnet — 10.0.10.0/24 · ca-central-1a</text>
-  <!-- Terraform label -->
-  <rect x="490" y="262" width="238" height="16" rx="3" fill="#f3e8ff" stroke="#7B42BC" stroke-width="0.7"/>
-  <text x="609" y="273" text-anchor="middle" font-size="9" fill="#5c2d91">aws_subnet.myapp-subnet-1</text>
+  <rect x="90" y="218" width="114" height="26" rx="5" fill="#f0e8ff"/>
+  <text x="147" y="228" text-anchor="middle" font-size="10" font-weight="700" fill="#5c2d91">Terraform</text>
+  <text x="147" y="240" text-anchor="middle" font-size="9" fill="#7B42BC">config files (*.tf)</text>
 
-  <!-- ══ Route Table ══ -->
-  <rect x="290" y="288" width="220" height="48" rx="8" fill="#fff8e1" stroke="#f9a825" stroke-width="1.2"/>
-  <line x1="308" y1="304" x2="330" y2="304" stroke="#e65100" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="308" y1="312" x2="330" y2="312" stroke="#e65100" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="308" y1="320" x2="330" y2="320" stroke="#e65100" stroke-width="1.5" stroke-linecap="round"/>
-  <text x="400" y="306" text-anchor="middle" font-size="12" font-weight="600" fill="#bf360c">Route table — dev-main-rtb</text>
-  <text x="400" y="324" text-anchor="middle" font-size="11" fill="#e65100">0.0.0.0/0 → Internet Gateway</text>
-  <!-- Terraform label -->
-  <rect x="268" y="336" width="264" height="16" rx="3" fill="#f3e8ff" stroke="#7B42BC" stroke-width="0.7"/>
-  <text x="400" y="347" text-anchor="middle" font-size="9" fill="#5c2d91">aws_default_route_table.main-rtb</text>
+  <!-- divider -->
+  <line x1="38" y1="258" x2="256" y2="258" stroke="#e8eaf0" stroke-width="1"/>
 
-  <!-- Arrow: Route Table → Security Group -->
-  <line x1="400" y1="352" x2="400" y2="378" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- ── entry-script.sh ── -->
+  <!-- file icon -->
+  <rect x="72" y="272" width="52" height="64" rx="5" fill="#f8f9fc" stroke="#c5cae9" stroke-width="1.2"/>
+  <polygon points="106,272 124,290 106,290" fill="#c5cae9"/>
+  <rect x="106" y="272" width="18" height="18" rx="0" fill="#f8f9fc" stroke="#c5cae9" stroke-width="1.2"/>
+  <line x1="82" y1="300" x2="114" y2="300" stroke="#9fa8da" stroke-width="1.2"/>
+  <line x1="82" y1="310" x2="114" y2="310" stroke="#9fa8da" stroke-width="1.2"/>
+  <line x1="82" y1="320" x2="104" y2="320" stroke="#9fa8da" stroke-width="1.2"/>
+  <text x="98" y="350" text-anchor="middle" font-size="10" font-weight="600" fill="#3949ab">entry-script.sh</text>
+  <text x="98" y="362" text-anchor="middle" font-size="9" fill="#7986cb">bootstrap · user_data</text>
 
-  <!-- ══ Security Group boundary ══ -->
-  <rect x="80" y="378" width="640" height="284" rx="8" fill="none" stroke="#e53935" stroke-width="1.2" stroke-dasharray="5 3"/>
-  <text x="96" y="394" font-size="11" font-weight="600" fill="#b71c1c">Security Group — dev-default-sg</text>
-  <!-- Terraform label -->
-  <rect x="400" y="382" width="306" height="16" rx="3" fill="#f3e8ff" stroke="#7B42BC" stroke-width="0.7"/>
-  <text x="553" y="393" text-anchor="middle" font-size="9" fill="#5c2d91">aws_default_security_group.default-sg</text>
+  <!-- Arrow down from files to Terraform core -->
+  <line x1="147" y1="245" x2="147" y2="268" stroke="#9fa8da" stroke-width="1.2" stroke-dasharray="4 2"/>
+  <line x1="124" y1="338" x2="158" y2="360" stroke="#9fa8da" stroke-width="1.2" stroke-dasharray="4 2"/>
 
-  <!-- Rule pills -->
-  <rect x="96" y="400" width="192" height="22" rx="4" fill="#ffebee" stroke="#ef9a9a" stroke-width="0.8"/>
-  <text x="192" y="411" text-anchor="middle" font-size="10" fill="#b71c1c">IN TCP :22 — your IP (SSH)</text>
-  <rect x="300" y="400" width="208" height="22" rx="4" fill="#ffebee" stroke="#ef9a9a" stroke-width="0.8"/>
-  <text x="404" y="411" text-anchor="middle" font-size="10" fill="#b71c1c">IN TCP :8080 — 0.0.0.0/0 (HTTP)</text>
-  <rect x="520" y="400" width="184" height="22" rx="4" fill="#f3f3f3" stroke="#ccc" stroke-width="0.8"/>
-  <text x="612" y="411" text-anchor="middle" font-size="10" fill="#555">OUT all — 0.0.0.0/0</text>
+  <!-- ── Terraform core ── -->
+  <rect x="96" y="374" width="102" height="102" rx="10" fill="#f0e8ff" stroke="#7B42BC" stroke-width="1.5" filter="url(#shadow)"/>
+  <polygon points="122,406 147,392 172,406 147,420" fill="#7B42BC"/>
+  <polygon points="122,422 147,408 172,422 147,436" fill="#5c2d91" opacity="0.9"/>
+  <text x="147" y="456" text-anchor="middle" font-size="10" font-weight="700" fill="#4a148c">Terraform</text>
+  <text x="147" y="468" text-anchor="middle" font-size="9" fill="#7B42BC">core</text>
 
-  <!-- ══ SSH Key Pair ══ -->
-  <rect x="96" y="432" width="152" height="62" rx="8" fill="#f5f5f5" stroke="#9e9e9e" stroke-width="1"/>
-  <circle cx="122" cy="452" r="9" fill="none" stroke="#555" stroke-width="1.5"/>
-  <circle cx="122" cy="452" r="3" fill="#555"/>
-  <line x1="131" y1="452" x2="150" y2="452" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="147" y1="452" x2="147" y2="458" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="142" y1="452" x2="142" y2="458" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
-  <text x="172" y="448" font-size="11" font-weight="600" fill="#212121">SSH key pair</text>
-  <text x="172" y="462" font-size="10" fill="#757575">server-key (RSA)</text>
-  <text x="172" y="476" font-size="10" fill="#757575">id_rsa.pub</text>
-  <!-- Terraform label -->
-  <rect x="96" y="494" width="152" height="16" rx="3" fill="#f3e8ff" stroke="#7B42BC" stroke-width="0.7"/>
-  <text x="172" y="505" text-anchor="middle" font-size="9" fill="#5c2d91">aws_key_pair.ssh-key</text>
+  <!-- Arrow right from Terraform core to AWS panel -->
+  <line x1="200" y1="425" x2="280" y2="425" stroke="#7B42BC" stroke-width="1.8" stroke-dasharray="5 2" marker-end="url(#arr)"/>
 
-  <!-- ══ AMI ══ -->
-  <rect x="96" y="520" width="152" height="62" rx="8" fill="#e8f5e9" stroke="#43a047" stroke-width="1"/>
-  <ellipse cx="122" cy="538" rx="13" ry="5" fill="none" stroke="#2e7d32" stroke-width="1.5"/>
-  <line x1="109" y1="538" x2="109" y2="550" stroke="#2e7d32" stroke-width="1.5"/>
-  <line x1="135" y1="538" x2="135" y2="550" stroke="#2e7d32" stroke-width="1.5"/>
-  <ellipse cx="122" cy="550" rx="13" ry="5" fill="#a5d6a7" stroke="#2e7d32" stroke-width="1.5"/>
-  <text x="152" y="537" font-size="11" font-weight="600" fill="#1b5e20">Amazon Linux 2</text>
-  <text x="152" y="551" font-size="10" fill="#388e3c">AMI — dynamic</text>
-  <text x="152" y="565" font-size="10" fill="#388e3c">amzn2-hvm-x86_64</text>
-  <!-- Terraform label -->
-  <rect x="96" y="582" width="152" height="16" rx="3" fill="#f3e8ff" stroke="#7B42BC" stroke-width="0.7"/>
-  <text x="172" y="593" text-anchor="middle" font-size="9" fill="#5c2d91">data.aws_ami.latest</text>
+  <!-- Arrow down to tfstate -->
+  <line x1="147" y1="476" x2="147" y2="520" stroke="#9fa8da" stroke-width="1.2" stroke-dasharray="4 2" marker-end="url(#arr)"/>
 
-  <!-- dashed connectors: key + AMI → EC2 -->
-  <line x1="248" y1="463" x2="282" y2="480" stroke="#9e9e9e" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr-gray)"/>
-  <line x1="248" y1="551" x2="282" y2="540" stroke="#9e9e9e" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr-gray)"/>
+  <!-- ── tfstate file ── -->
+  <rect x="100" y="522" width="94" height="110" rx="8" fill="#e3f2fd" stroke="#1976d2" stroke-width="1.2" filter="url(#shadow)"/>
+  <!-- file page lines -->
+  <line x1="116" y1="548" x2="178" y2="548" stroke="#42a5f5" stroke-width="1.2"/>
+  <line x1="116" y1="560" x2="178" y2="560" stroke="#42a5f5" stroke-width="1.2"/>
+  <line x1="116" y1="572" x2="178" y2="572" stroke="#42a5f5" stroke-width="1.2"/>
+  <line x1="116" y1="584" x2="160" y2="584" stroke="#42a5f5" stroke-width="1.2"/>
+  <!-- cyan accent top bar -->
+  <rect x="100" y="522" width="94" height="18" rx="8" fill="#0097d6"/>
+  <rect x="100" y="530" width="94" height="10" fill="#0097d6"/>
+  <text x="147" y="534" text-anchor="middle" font-size="8" font-weight="700" fill="white">TF STATE</text>
+  <text x="147" y="604" text-anchor="middle" font-size="10" font-weight="600" fill="#1565c0">terraform.tfstate</text>
+  <text x="147" y="618" text-anchor="middle" font-size="9" fill="#1976d2">remote / local</text>
 
-  <!-- ══ EC2 Instance ══ -->
-  <rect x="282" y="432" width="422" height="218" rx="10" fill="#ede7f6" stroke="#5e35b1" stroke-width="1.5"/>
-  <rect x="300" y="448" width="36" height="9" rx="2" fill="#7e57c2"/>
-  <rect x="300" y="460" width="36" height="9" rx="2" fill="#7e57c2" opacity="0.7"/>
-  <rect x="300" y="472" width="36" height="9" rx="2" fill="#7e57c2" opacity="0.4"/>
-  <circle cx="332" cy="452" r="2.5" fill="#4caf50"/>
-  <circle cx="332" cy="464" r="2.5" fill="#4caf50"/>
-  <circle cx="332" cy="476" r="2.5" fill="#9e9e9e"/>
-  <text x="490" y="456" text-anchor="middle" font-size="13" font-weight="700" fill="#311b92">EC2 instance — dev-server</text>
-  <text x="490" y="474" text-anchor="middle" font-size="11" fill="#5e35b1">t2.micro · Amazon Linux 2 · public IP</text>
-  <!-- Terraform label on EC2 -->
-  <rect x="316" y="480" width="352" height="16" rx="3" fill="#f3e8ff" stroke="#7B42BC" stroke-width="0.8"/>
-  <text x="492" y="491" text-anchor="middle" font-size="9" fill="#5c2d91">aws_instance.myapp_server  ·  provisioner: file + remote-exec + local-exec</text>
+  <!-- ════════════════════════════════════════════════
+       RIGHT PANEL — AWS Cloud
+  ════════════════════════════════════════════════ -->
 
-  <!-- Docker box -->
-  <rect x="298" y="504" width="390" height="134" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/>
-  <rect x="314" y="518" width="30" height="20" rx="3" fill="#2196f3"/>
-  <rect x="319" y="512" width="9" height="7" rx="2" fill="#2196f3" opacity="0.75"/>
-  <rect x="332" y="514" width="8" height="5" rx="2" fill="#2196f3" opacity="0.75"/>
-  <path d="M314 539 Q319 543 324 539 Q329 535 334 539 Q339 543 344 539" fill="none" stroke="#90caf9" stroke-width="1.2" stroke-linecap="round"/>
-  <text x="490" y="524" text-anchor="middle" font-size="12" font-weight="700" fill="#0d47a1">Docker</text>
-  <text x="490" y="540" text-anchor="middle" font-size="10" fill="#1565c0">entry-script.sh: yum install docker → systemctl start</text>
+  <!-- AWS Cloud card -->
+  <rect x="290" y="66" width="892" height="614" rx="10" fill="#ffffff" filter="url(#shadow)"/>
 
-  <!-- Nginx pill -->
-  <rect x="314" y="552" width="358" height="76" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1"/>
-  <text x="350" y="596" text-anchor="middle" font-size="36" font-weight="700" fill="#1b5e20" font-family="Arial Black, Arial, sans-serif">N</text>
-  <text x="510" y="576" text-anchor="middle" font-size="13" font-weight="700" fill="#1b5e20">Nginx</text>
-  <text x="510" y="594" text-anchor="middle" font-size="11" fill="#388e3c">host :8080 → container :80</text>
-  <text x="510" y="610" text-anchor="middle" font-size="10" fill="#555">docker run -p 8080:80 nginx</text>
+  <!-- AWS header bar -->
+  <rect x="290" y="66" width="892" height="36" rx="10" fill="#232F3E"/>
+  <rect x="290" y="90" width="892" height="12" fill="#232F3E"/>
+  <rect x="300" y="74" width="46" height="20" rx="4" fill="#FF9900"/>
+  <text x="323" y="88" text-anchor="middle" font-size="10" font-weight="800" fill="#232F3E" font-family="monospace">aws</text>
+  <text x="358" y="88" font-size="12" font-weight="700" fill="#FF9900">AWS Cloud</text>
+  <text x="1172" y="88" text-anchor="end" font-size="10" fill="#8e9db5">terraform apply --auto-approve</text>
 
-  <!-- ══ Terraform footer ══ -->
-  <rect x="0" y="694" width="800" height="26" rx="8" fill="#7B42BC"/>
-  <rect x="0" y="694" width="800" height="8" fill="#7B42BC"/>
-  <!-- T logo repeated -->
-  <rect x="16" y="702" width="14" height="2.5" rx="1" fill="white"/>
-  <rect x="21" y="702" width="2.5" height="14" rx="1" fill="white"/>
-  <text x="44" y="712" font-size="10" fill="#e0c8ff">Provisioned by Terraform · main.tf · terraform apply</text>
-  <text x="680" y="712" font-size="10" fill="#e0c8ff">ca-central-1</text>
+  <!-- ── Region boundary ── -->
+  <rect x="302" y="110" width="868" height="558" rx="8" fill="#fdf8ff" stroke="#CC0066" stroke-width="1.5" stroke-dasharray="7 3"/>
+  <rect x="302" y="110" width="140" height="22" rx="4" fill="#CC0066"/>
+  <text x="372" y="125" text-anchor="middle" font-size="10" font-weight="700" fill="white">Region: ca-central-1</text>
+
+  <!-- ── VPC boundary ── -->
+  <rect x="314" y="142" width="844" height="516" rx="8" fill="#faf5ff" stroke="#8A2BE2" stroke-width="1.5"/>
+  <rect x="314" y="142" width="108" height="20" rx="4" fill="#8A2BE2"/>
+  <text x="368" y="156" text-anchor="middle" font-size="10" font-weight="700" fill="white">VPC: 10.0.0.0/16</text>
+  <text x="430" y="156" font-size="9" fill="#8A2BE2">dev-vpc  ·  aws_vpc.myapp-vpc</text>
+
+  <!-- ── Availability Zone ── -->
+  <rect x="326" y="172" width="620" height="474" rx="8" fill="#f5f5ff" stroke="#5c6bc0" stroke-width="1" stroke-dasharray="5 3"/>
+  <rect x="326" y="172" width="160" height="20" rx="4" fill="#5c6bc0"/>
+  <text x="406" y="186" text-anchor="middle" font-size="10" font-weight="700" fill="white">AZ: ca-central-1a</text>
+
+  <!-- ── Public Subnet ── -->
+  <rect x="338" y="202" width="596" height="432" rx="8" fill="#f1f8f1" stroke="#2e7d32" stroke-width="1.5"/>
+  <!-- subnet header -->
+  <rect x="338" y="202" width="596" height="28" rx="8" fill="#2e7d32"/>
+  <rect x="338" y="216" width="596" height="14" fill="#2e7d32"/>
+  <!-- padlock -->
+  <rect x="350" y="209" width="11" height="9" rx="2" fill="none" stroke="white" stroke-width="1.2"/>
+  <path d="M353 209 Q353 205 355.5 205 Q358 205 358 209" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="370" y="220" font-size="10" font-weight="700" fill="white">Public Subnet: 10.0.10.0/24</text>
+  <text x="500" y="220" font-size="9" fill="#a5d6a7">aws_subnet.myapp-subnet-1  ·  module.myapp-subnet</text>
+
+  <!-- ── Security Group ── -->
+  <rect x="350" y="240" width="572" height="382" rx="8" fill="none" stroke="#e53935" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <!-- SG label -->
+  <rect x="350" y="236" width="220" height="18" rx="4" fill="#e53935"/>
+  <text x="460" y="248" text-anchor="middle" font-size="9" font-weight="700" fill="white">Security Group: dev-default-sg  ·  aws_default_security_group</text>
+
+  <!-- Firewall rule pills -->
+  <rect x="362" y="262" width="148" height="20" rx="10" fill="#ffebee" stroke="#ef9a9a" stroke-width="1"/>
+  <text x="436" y="276" text-anchor="middle" font-size="8.5" fill="#c62828">IN  :22  TCP  your-ip/32</text>
+  <rect x="518" y="262" width="148" height="20" rx="10" fill="#ffebee" stroke="#ef9a9a" stroke-width="1"/>
+  <text x="592" y="276" text-anchor="middle" font-size="8.5" fill="#c62828">IN  :8080  TCP  0.0.0.0/0</text>
+  <rect x="674" y="262" width="120" height="20" rx="10" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="734" y="276" text-anchor="middle" font-size="8.5" fill="#555">OUT  all  0.0.0.0/0</text>
+
+  <!-- ── EC2 Instance card ── -->
+  <rect x="366" y="294" width="290" height="316" rx="10" fill="#fff8f0" stroke="#e65100" stroke-width="1.8" filter="url(#shadow)"/>
+  <rect x="366" y="294" width="290" height="32" rx="10" fill="#e65100"/>
+  <rect x="366" y="310" width="290" height="16" fill="#e65100"/>
+  <!-- EC2 chip icon in header -->
+  <rect x="376" y="300" width="22" height="18" rx="3" fill="#bf360c"/>
+  <rect x="379" y="303" width="16" height="12" rx="2" fill="#ff8a65"/>
+  <line x1="382" y1="300" x2="382" y2="297" stroke="#e65100" stroke-width="1.5"/>
+  <line x1="387" y1="300" x2="387" y2="297" stroke="#e65100" stroke-width="1.5"/>
+  <line x1="392" y1="300" x2="392" y2="297" stroke="#e65100" stroke-width="1.5"/>
+  <line x1="382" y1="318" x2="382" y2="321" stroke="#e65100" stroke-width="1.5"/>
+  <line x1="387" y1="318" x2="387" y2="321" stroke="#e65100" stroke-width="1.5"/>
+  <line x1="392" y1="318" x2="392" y2="321" stroke="#e65100" stroke-width="1.5"/>
+  <text x="408" y="315" font-size="11" font-weight="700" fill="white">EC2 Instance — dev-server</text>
+  <text x="376" y="338" font-size="9" fill="#bf360c">t2.micro  ·  Amazon Linux 2  ·  public IP assigned</text>
+  <text x="376" y="350" font-size="9" fill="#bf360c">aws_instance.myapp-server  ·  module.myapp-server</text>
+
+  <!-- AMI info row -->
+  <rect x="376" y="358" width="270" height="22" rx="4" fill="#fbe9e7" stroke="#ffab91" stroke-width="0.8"/>
+  <text x="511" y="373" text-anchor="middle" font-size="8.5" fill="#bf360c">AMI: amzn2-ami-hvm-*-x86_64-gp2  (dynamic · data.aws_ami)</text>
+
+  <!-- Key pair row -->
+  <rect x="376" y="386" width="270" height="22" rx="4" fill="#fce4ec" stroke="#f48fb1" stroke-width="0.8"/>
+  <!-- key icon -->
+  <circle cx="390" cy="397" r="5" fill="none" stroke="#c2185b" stroke-width="1.2"/>
+  <circle cx="390" cy="397" r="2" fill="#c2185b"/>
+  <line x1="395" y1="397" x2="406" y2="397" stroke="#c2185b" stroke-width="1.2"/>
+  <line x1="404" y1="397" x2="404" y2="401" stroke="#c2185b" stroke-width="1"/>
+  <line x1="400" y1="397" x2="400" y2="401" stroke="#c2185b" stroke-width="1"/>
+  <text x="415" y="401" font-size="8.5" fill="#880e4f">SSH Key Pair: server-key  ·  aws_key_pair.ssh-key</text>
+
+  <!-- Docker container box -->
+  <rect x="376" y="416" width="270" height="130" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.2"/>
+  <rect x="376" y="416" width="270" height="24" rx="8" fill="#1565c0"/>
+  <rect x="376" y="428" width="270" height="12" fill="#1565c0"/>
+  <!-- Docker whale -->
+  <rect x="384" y="421" width="18" height="13" rx="2" fill="white"/>
+  <rect x="387" y="417" width="6" height="5" rx="1" fill="white" opacity="0.8"/>
+  <rect x="395" y="419" width="5" height="3" rx="1" fill="white" opacity="0.7"/>
+  <path d="M384 435 Q387 438 390 435 Q393 432 396 435" fill="none" stroke="#90caf9" stroke-width="1" stroke-linecap="round"/>
+  <text x="410" y="432" font-size="10" font-weight="700" fill="white">Docker Container</text>
+
+  <!-- Nginx inside Docker -->
+  <rect x="386" y="448" width="250" height="90" rx="6" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <!-- Nginx N lettermark -->
+  <rect x="394" y="456" width="40" height="40" rx="6" fill="#1b5e20"/>
+  <text x="414" y="483" text-anchor="middle" font-size="26" font-weight="900" fill="white" font-family="Arial Black, Arial">N</text>
+  <text x="448" y="468" font-size="12" font-weight="700" fill="#1b5e20">Nginx</text>
+  <text x="448" y="482" font-size="9" fill="#388e3c">docker run -d -p 8080:80 nginx</text>
+  <text x="448" y="495" font-size="9" fill="#388e3c">host :8080  →  container :80</text>
+  <rect x="448" y="500" width="180" height="16" rx="8" fill="#c8e6c9" stroke="#66bb6a" stroke-width="0.8"/>
+  <text x="538" y="511" text-anchor="middle" font-size="8" fill="#1b5e20">entry-script.sh · user_data · cloud-init</text>
+
+  <!-- ── Internet Gateway ── -->
+  <!-- connector line from EC2 to IGW -->
+  <line x1="658" y1="452" x2="730" y2="452" stroke="#555" stroke-width="1.5" stroke-dasharray="0" marker-end="url(#arr)" marker-start="url(#arr)"/>
+
+  <rect x="730" y="414" width="100" height="100" rx="50" fill="none" stroke="#5c6bc0" stroke-width="2"/>
+  <rect x="740" y="424" width="80" height="80" rx="40" fill="#ede7f6" stroke="#7986cb" stroke-width="1"/>
+  <!-- crosshair -->
+  <line x1="780" y1="434" x2="780" y2="494" stroke="#5c6bc0" stroke-width="1.5"/>
+  <line x1="750" y1="464" x2="810" y2="464" stroke="#5c6bc0" stroke-width="1.5"/>
+  <!-- arrows on crosshair -->
+  <polygon points="780,436 775,446 785,446" fill="#5c6bc0"/>
+  <polygon points="780,492 775,482 785,482" fill="#5c6bc0"/>
+  <polygon points="752,464 762,459 762,469" fill="#5c6bc0"/>
+  <polygon points="808,464 798,459 798,469" fill="#5c6bc0"/>
+  <text x="780" y="530" text-anchor="middle" font-size="10" font-weight="700" fill="#3949ab">Internet</text>
+  <text x="780" y="543" text-anchor="middle" font-size="10" font-weight="700" fill="#3949ab">Gateway</text>
+  <text x="780" y="556" text-anchor="middle" font-size="8.5" fill="#7986cb">dev-igw</text>
+  <text x="780" y="568" text-anchor="middle" font-size="8" fill="#9fa8da">aws_internet_gateway</text>
+
+  <!-- ── Route Table ── -->
+  <line x1="832" y1="452" x2="880" y2="452" stroke="#555" stroke-width="1.5" marker-end="url(#arr)" marker-start="url(#arr)"/>
+
+  <rect x="880" y="414" width="100" height="100" rx="50" fill="none" stroke="#5c6bc0" stroke-width="2"/>
+  <rect x="890" y="424" width="80" height="80" rx="40" fill="#ede7f6" stroke="#7986cb" stroke-width="1"/>
+  <!-- route table icon: up arrow -->
+  <line x1="930" y1="490" x2="930" y2="442" stroke="#5c6bc0" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="916" y1="456" x2="930" y2="442" stroke="#5c6bc0" stroke-width="2"/>
+  <line x1="944" y1="456" x2="930" y2="442" stroke="#5c6bc0" stroke-width="2"/>
+  <text x="930" y="530" text-anchor="middle" font-size="10" font-weight="700" fill="#3949ab">Route</text>
+  <text x="930" y="543" text-anchor="middle" font-size="10" font-weight="700" fill="#3949ab">Table</text>
+  <text x="930" y="556" text-anchor="middle" font-size="8.5" fill="#7986cb">0.0.0.0/0 → IGW</text>
+  <text x="930" y="568" text-anchor="middle" font-size="8" fill="#9fa8da">aws_default_route_table</text>
+
+  <!-- ── Users ── -->
+  <line x1="982" y1="452" x2="1030" y2="452" stroke="#555" stroke-width="1.5" marker-end="url(#arr)" marker-start="url(#arr)"/>
+
+  <!-- users group icon -->
+  <circle cx="1090" cy="432" r="16" fill="#eceff1" stroke="#607d8b" stroke-width="1.5"/>
+  <circle cx="1083" cy="428" r="7" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+  <path d="M1072 444 Q1072 436 1083 436 Q1094 436 1094 444" fill="none" stroke="#546e7a" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="1099" cy="426" r="5.5" fill="none" stroke="#90a4ae" stroke-width="1.2"/>
+  <path d="M1091 438 Q1093 433 1099 433 Q1108 433 1108 440" fill="none" stroke="#90a4ae" stroke-width="1.2" stroke-linecap="round"/>
+  <text x="1090" y="472" text-anchor="middle" font-size="11" font-weight="700" fill="#37474f">Users</text>
+  <text x="1090" y="485" text-anchor="middle" font-size="8.5" fill="#607d8b">HTTP :8080</text>
+
+  <!-- ── Terraform footer tag ── -->
+  <rect x="302" y="642" width="868" height="22" rx="6" fill="#1a1f36"/>
+  <text x="736" y="657" text-anchor="middle" font-size="9" fill="#8892a4">
+    Provisioned by Terraform · modules/subnet · modules/webserver · terraform init → plan → apply
+  </text>
 
 </svg>
