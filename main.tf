@@ -9,6 +9,7 @@ variable env_prefix {}
 variable my_ip {}
 variable instance_type {}
 variable public_key_location {}
+variable image_name {}
 
 
 resource "aws_vpc" "myapp-vpc" {
@@ -80,7 +81,7 @@ data "aws_ami" "latest-amazon-linux-image" {
     owners = ["amazon"]
     filter {
       name = "name"
-      values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+      values = [var.image_name]
     }
     filter {
     name   = "virtualization-type"
