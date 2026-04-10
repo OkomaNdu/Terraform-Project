@@ -11,9 +11,9 @@ A production-ready **Amazon EKS cluster** provisioned entirely with Terraform, d
 
 ## 📐 Architecture Overview
 
-![Architecture Diagram](./docs/architecture.svg)
+![Architecture Diagram](./terraform/architecture.png)
 
-> Save [`docs/architecture.svg`](./docs/architecture.svg) from this repo for a full-resolution view.
+> Save [`docs/architecture.png`](./docs/architecture.png) from this repo for a full-resolution view.
 
 The infrastructure is deployed across **3 Availability Zones** (`ca-central-1a`, `ca-central-1b`, `ca-central-1d`) inside a single VPC (`10.0.0.0/16`). Traffic enters via the Internet Gateway, is routed through the VPC Router to the Network Load Balancer in the public subnets, and forwarded over HTTPS 443 to the EKS cluster and Ingress Controller in the private subnets. Worker nodes across all three AZs communicate directly with the control plane. Private subnet egress uses a single NAT Gateway in AZ-A. Supporting platform services — KMS, CloudWatch, OIDC/IRSA, and EKS add-ons — are attached to the cluster.
 
